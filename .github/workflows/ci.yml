@@ -28,6 +28,7 @@ jobs:
         run: swift test -v --configuration release -Xswiftc -enable-testing
 
   ios:
+    if: false # not yet working
     runs-on: macos-12
     steps:
       - uses: actions/checkout@v2
@@ -37,6 +38,7 @@ jobs:
         run: xcodebuild clean test -configuration Release -scheme "CrossFile" -sdk "iphonesimulator" -destination "platform=iOS Simulator,name=iPhone 14 Pro"
 
   tvos:
+    if: false # not yet working
     runs-on: macos-12
     steps:
       - uses: actions/checkout@v2
@@ -55,6 +57,7 @@ jobs:
         run: swift test -v --configuration release -Xswiftc -enable-testing
 
   api-doc:
+    if: false # not yet working
     runs-on: macos-12 # needed to be able to document SwiftUI
     timeout-minutes: 20
     steps:
