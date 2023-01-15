@@ -14,7 +14,7 @@ public class CrossFile {
         #if canImport(Skiff)
         return try java$io$File(path.javaString).exists() == true
         #else
-        return FileManager.default.fileExists(atPath: path)
+        return FileManager.default.fileExists(atPath: path) == true
         #endif
     }
 }
