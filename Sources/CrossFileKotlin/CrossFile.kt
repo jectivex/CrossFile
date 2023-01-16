@@ -1,7 +1,10 @@
 package CrossFile
 
-class CrossFile {
-    fun exists(path: String): Boolean {
-        return java.io.File(path).exists() == true
+open class CrossFile {
+    constructor() {
+    }
+
+    open fun exists(path: String): Boolean {
+        return java.io.File((path)).exists() == true
     }
 }
