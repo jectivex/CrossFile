@@ -17,7 +17,7 @@ let package = Package(
         .target(name: "CrossFile", dependencies: []),
         .testTarget(name: "CrossFileTests", dependencies: ["CrossFile"]),
         .target(name: "CrossFileJVM", dependencies: [
-            .product(name: "Skiff", package: "Skiff", condition: .when(platforms: [.macOS])),
+            .product(name: "Skiff", package: "Skiff", condition: .when(platforms: [.macOS, .linux])),
         ]),
         .testTarget(name: "CrossFileJVMTests", dependencies: ["CrossFileJVM"]),
     ]
