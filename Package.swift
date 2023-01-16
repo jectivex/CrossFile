@@ -8,7 +8,7 @@ let package = Package(
         .macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v8)
     ],
     products: [
-        .library(name: "CrossFile", type: .static, targets: ["CrossFile"]),
+        .library(name: "CrossFile", targets: ["CrossFile"]),
         .library(name: "CrossFileJVM", type: .dynamic, targets: ["CrossFileJVM"]),
     ],
     dependencies: [
