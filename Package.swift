@@ -8,7 +8,8 @@ let package = Package(
         .macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v8)
     ],
     products: [
-        .library(name: "CrossFile", targets: ["CrossFile"]),
+        .library(name: "CrossFile", type: .static, targets: ["CrossFile"]),
+        .library(name: "CrossFileJVM", type: .dynamic, targets: ["CrossFileJVM"]),
     ],
     dependencies: [
         .package(url: "https://github.com/jectivex/Skiff", branch: "main"),
@@ -16,9 +17,7 @@ let package = Package(
     targets: [
         .target(name: "CrossFile", dependencies: []),
         .testTarget(name: "CrossFileTests", dependencies: ["CrossFile"]),
-        .target(name: "CrossFileJVM", dependencies: [
-            .product(name: "Skiff", package: "Skiff", condition: .when(platforms: [.macOS, .linux])),
-        ]),
+        .target(name: "CrossFileJVM", dependencies: ["Skiff"]),
         .testTarget(name: "CrossFileJVMTests", dependencies: ["CrossFileJVM"]),
     ]
 )
