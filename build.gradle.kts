@@ -3,6 +3,20 @@ plugins {
     `java-library`
 }
 
+sourceSets {
+    main {
+        java {
+            setSrcDirs(listOf("Sources/CrossFileKotlin"))
+        }
+    }
+
+    test {
+        java {
+            setSrcDirs(listOf("Tests/CrossFileKotlinTests"))
+        }
+    }
+}
+
 repositories {
     mavenCentral()
 }
